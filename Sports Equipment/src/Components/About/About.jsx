@@ -19,7 +19,7 @@ const About = () => {
             <h1 className="mb-5 md:text-5xl text-2xl font-bold text-white">
               Details Information
             </h1>
-           <Link> 
+           <Link to={'/details'}> 
            <button className="btn bg-gray-500 hover:bg-slate-300 text-white">Details</button>
            </Link>
           </div>

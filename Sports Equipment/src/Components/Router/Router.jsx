@@ -13,6 +13,7 @@ import Update from "../Update/Update";
 import ViewDetails from "../ViewDetails/ViewDetails";
 import Error from "../error/Error";
 import Contract from "../Contract/Contract";
+import Details from "../Details";
 
 const Router =createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const Router =createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>
+            },
+            {
+                path:'/details',
+                element:<Details></Details>
             },
             {
                 path:'/contract',
