@@ -1,0 +1,33 @@
+[
+    {
+        "id": 1,
+        "brandName": "Apple",
+        "img": "https://media.designrush.com/inspiration_images/134802/conversions/_1511456315_653_apple-preview.jpg"
+    },
+    {
+        "id": 2,
+        "brandName": "Samsung",
+        "img": "https://www.designyourway.net/blog/wp-content/uploads/2019/10/s1-6-1.jpg"
+    },
+    {
+        "id": 3,
+        "brandName": "Sony",
+        "img": "https://e0.pxfuel.com/wallpapers/297/971/desktop-wallpaper-sony-logo-electronics-brand-symbol-2018-all.jpg"
+    },
+    {
+        "id": 4,
+        "brandName": "Google",
+        "img": "https://lh3.googleusercontent.com/COxitqgJr1sJnIDe8-jiKhxDx1FrYbtRHKJ9z_hELisAlapwE9LUPh6fcXIfb5vwpbMl4xl9H9TRFPc5NOO8Sb3VSgIBrfRYvW6cUA"
+    },
+    {
+        "id": 5,
+        "brandName": "Intel",
+        "img": "https://1000logos.net/wp-content/uploads/2017/02/Intel-Logo-2005.png"
+    },
+    {
+        "id": 6,
+        "brandName": "Walton",
+        "img": "https://images.crunchbase.com/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/audd4z9mrhsgjf7o7wi7"
+    }
+  ]
+  
