@@ -121,7 +121,11 @@ function Navbar() {
             {navbar.map((n, i) => (
               <NavLink
                 to={n.link}
-                className="py-3 px-4 my-3 rounded-2xl"
+                className={({ isActive }) =>
+                  `py-3 px-4 my-3 rounded-2xl ${
+                    isActive ? "bg-yellow-600 text-white" : "hover:bg-gray-700"
+                  }`
+                }
                 key={i}
               >
                 {n.title}
@@ -147,6 +151,7 @@ function Navbar() {
           >
             <img
               src={user?.photoURL}
+              referrerPolicy="no-referrer"
               tabIndex={0}
               role="button"
               className="h-12 w-12 shadow-lg rounded-full cursor-pointer"

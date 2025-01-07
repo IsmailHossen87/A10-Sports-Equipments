@@ -6,6 +6,7 @@ import CategorySection from '../CategorySection/CategorySection';
 import Service from '../Service/Service';
 import { Helmet } from 'react-helmet';
 import CardReview from '../CardReview/CardRevies';
+import Offer from '../Offer';
 
 const Home = () => {
     return (
@@ -20,6 +21,7 @@ const Home = () => {
             <ProductSection></ProductSection>
             <CategorySection></CategorySection>
             <Service></Service>
+            <Offer></Offer>
             <About></About> 
             <CardReview></CardReview>
         </div>

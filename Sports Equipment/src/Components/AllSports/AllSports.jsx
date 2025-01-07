@@ -4,54 +4,56 @@ import { NavLink, useLoaderData } from "react-router-dom";
 
 const AllSports = () => {
   const data = useLoaderData();
-  const [sortedData,setSortedData] = useState(data)
-  const handleSortbyPrice = ()=>{
-    const sort = [...sortedData].sort((a,b)=> a.price - b.price)
-    setSortedData(sort)
-  }
+  const [sortedData, setSortedData] = useState(data);
+
+  const handleSortbyPrice = () => {
+    const sort = [...sortedData].sort((a, b) => a.price - b.price);
+    setSortedData(sort);
+  };
+
   return (
     <>
-    <Helmet>
-      <title>All Sports || Sports</title>
-      <meta name="description" content="Helmet application" />
+      <Helmet>
+        <title>All Sports || Sports</title>
+        <meta name="description" content="Helmet application" />
       </Helmet>
       <div className="pl-4 my-8">
-          <div className="overflow-x-auto">
-            <div><button onClick={handleSortbyPrice} className="btn  btn-primary">Sort by Price</button></div>
-            <table className="table table-zebra">
-              {/* head */}
-              <thead>
-                <tr>
-                  <th>No</th>
-                  <th>Name</th>
-                  <th>Category</th>
-                  <th>Rating</th>
-                  <th>StockStatus</th>
-                  <th>Price</th>
-                  <th>Details</th>
-                </tr>
-              </thead>
-             {
-                sortedData.length === 0? <p>No Data Available</p> : sortedData?.map((tab,index) =>
-                    <tbody >
-                    <tr>
-                      <th>{index + 1}</th>
-                      <td className="flex items-center gap-2 ">
-                        <div className="w-[40px] "><img className="bg-gray-300 p-1 rounded-full " src={tab.photo} alt="" /></div>
-                        {tab.name}</td>
-                      <td>{tab.category}  </td>
-                      <td>{tab.rating}  </td>
-                      
-                      <td>{tab.stockStatus}</td>
-                      <td>{tab.price}</td>
-                      <td><NavLink to={`/details/${tab._id}`}><button className="btn btn-neutral">Details</button></NavLink></td>
-                    </tr>
-                  </tbody>
-                )
-                
-             }
-            </table>
-          </div>
+        <div className="flex justify-between items-center mb-4">
+          <h1 className="text-2xl font-bold">All Sports</h1>
+          <button onClick={handleSortbyPrice} className="btn btn-primary">
+            Sort by Price
+          </button>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {sortedData.length === 0 ? (
+            <p>No Data Available</p>
+          ) : (
+            sortedData.map((item) => (
+              <div
+                key={item._id}
+                className="card bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200"
+              >
+                <img
+                  src={item.photo}
+                  alt={item.name}
+                  className="w-full h-40 object-cover bg-gray-300"
+                />
+                <div className="p-4">
+                  <h2 className="text-lg font-bold mb-2">{item.name}</h2>
+                  <p className="text-sm text-gray-600">Category: {item.category}</p>
+                  <p className="text-sm text-gray-600">Rating: {item.rating}</p>
+                  <p className="text-sm text-gray-600">
+                    Stock Status: {item.stockStatus}
+                  </p>
+                  <p className="text-lg font-semibold mt-2">${item.price}</p>
+                  <NavLink to={`/details/${item._id}`}>
+                    <button className="btn btn-neutral mt-4 w-full">Details</button>
+                  </NavLink>
+                </div>
+              </div>
+            ))
+          )}
+        </div>
       </div>
     </>
   );
